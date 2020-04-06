@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "compile": "tsc --build tsconfig.build.json",
+    "compile:clean": "tsc --build tsconfig.build.json --clean",
+    "watch": "tsc --build tsconfig.build.json --watch",
+    "debug-services": "node --inspect node_modules/serverless/bin/serverless offline --skipCacheInvalidation",
+    "debug-gateway": "cd services/gateway && node --inspect=9228 index.js"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2",
+    "serverless": "^1.67.0",
+    "serverless-offline": "^6.1.4",
+    "typescript": "^3.8.3"
+  }
+}

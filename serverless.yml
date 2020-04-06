@@ -1,0 +1,60 @@
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    resourceRoutes: true
+
+service: services-gql
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-west-2
+
+functions:
+  customers:
+    handler: services/customers/dist/index.handler
+    events:
+      - http:
+          path: customers
+          method: ANY
+  orders:
+    handler: services/orders/index.handler
+    events:
+      - http:
+          path: orders
+          method: ANY
+  products:
+    handler: services/products/dist/index.handler
+    events:
+      - http:
+          path: products
+          method: ANY
+
+resources:
+  Resources:
+    ProxyResource:
+      Type: AWS::ApiGateway::Resource
+      Properties:
+        ParentId:
+          Fn::GetAtt:
+            - ApiGatewayRestApi # our default Rest API logical ID
+            - RootResourceId
+        PathPart: graphql
+        RestApiId:
+          Ref: ApiGatewayRestApi
+    ProxyMethod:
+      Type: AWS::ApiGateway::Method
+      Properties:
+        ResourceId:
+          Ref: ProxyResource
+        RestApiId:
+          Ref: ApiGatewayRestApi
+        HttpMethod: ANY
+        MethodResponses:
+          - StatusCode: 200
+        Integration:
+          Type: HTTP_PROXY
+          Uri: http://localhost:4000

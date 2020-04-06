@@ -1,0 +1,19 @@
+{
+  "name": "@test/order-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.8.0",
+    "graphql": "^15.0.0"
+  },
+  "devDependencies": {
+    "apollo-server-types": "^0.3.0"
+  }
+}

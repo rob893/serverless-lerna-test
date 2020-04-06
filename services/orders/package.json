@@ -1,0 +1,17 @@
+{
+  "name": "orders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/federation": "^0.13.2",
+    "@test/order-api": "^1.0.0",
+    "apollo-server-lambda": "^2.11.0",
+    "graphql": "^15.0.0"
+  }
+}
