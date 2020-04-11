@@ -1,8 +1,7 @@
 import { gql, ApolloServer } from "apollo-server-lambda";
 import { buildFederatedSchema } from "@apollo/federation";
 import { GraphQLResolverMap } from "apollo-graphql";
-// @ts-ignore
-import { CustomerAPI } from "@test/customer-api";
+const { CustomerAPI } = require("@test/customer-api");
 
 const typeDefs = gql`
   extend type Query {
@@ -19,7 +18,7 @@ const typeDefs = gql`
 
 const resolvers: GraphQLResolverMap<{
   dataSources: {
-    customerAPI: CustomerAPI;
+    customerAPI: any;
   };
 }> = {
   Query: {

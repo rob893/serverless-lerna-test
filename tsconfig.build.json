@@ -6,8 +6,6 @@
   "include": [],
   "references": [
     { "path": "./packages/order-api" },
-    { "path": "./services/customers" },
-    { "path": "./services/products" },
     { "path": "./packages/product-api" }
   ]
 }

@@ -1,23 +1,27 @@
 {
-  "name": "products",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@apollo/federation": "^0.13.2",
-    "@test/product-api": "^1.0.0",
-    "apollo-server-lambda": "^2.11.0",
-    "graphql": "^15.0.0"
-  },
-  "devDependencies": {
-    "@types/aws-lambda": "^8.10.47",
-    "@types/graphql": "^14.5.0",
-    "apollo-server-types": "^0.3.0"
-  }
+	"name": "products",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+    "author": "",
+    "scripts": {
+        "build": "webpack"
+    },
+	"license": "ISC",
+	"dependencies": {
+        "@apollo/federation": "^0.13.2",
+        "@test/product-api": "^1.0.0",
+		"apollo-server-lambda": "^2.11.0",
+		"graphql": "^15.0.0"
+	},
+	"devDependencies": {
+		"@types/aws-lambda": "^8.10.47",
+		"@types/graphql": "^14.5.0",
+		"apollo-server-types": "^0.3.0",
+		"ts-loader": "^6.2.2",
+		"webpack": "^4.42.1",
+		"webpack-cli": "^3.3.11",
+		"webpack-node-externals": "^1.7.2"
+	}
 }
